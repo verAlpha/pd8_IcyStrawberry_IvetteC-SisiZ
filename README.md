@@ -1,4 +1,4 @@
-pd8_-TN-_IvetteC-SisiZ
+pd8_-IcyStrawberry-_IvetteC-SisiZ
 ======================
 Overall idea (a la abstract). In a brief paragraph, give overview of project.
   We plan to make a game similar to Monopoly. It it will have a board class, a bank class that keeps track of the moeny, a class that makes a player move, a class that increases or decreases a players amount of money, and a class that helps a player move. 
