@@ -5,6 +5,7 @@ public class Board{
       
     public Board(int characternumber){
 	characterLocations = new BoardNode[characternumber];
+	
 	_start = new BoardNode(-1, -1, -1, "GO", null);
 	/*BoardNode temp1 = new BoardNode(7, 50, 450, "loc last", _start);
 	BoardNode temp2 = new BoardNode(7, 35, 350, "loc last-1", temp1);
@@ -12,6 +13,7 @@ public class Board{
 	BoardNode temp4 = new BoardNode(6, 25, 250, "loc last-3", temp3);
 	BoardNode temp5 = new BoardNode(6, 23, 200, "loc last-4", temp4);
 	BoardNode temp6 = new BoardNode(5, 20, 150, "loc last-5", temp5);
+	//add the rest of the locations in
         */
         String[] locs = {"Boardwalk", "Park Place", "Bond Street"
 			 "Pennsylvania Avenue","North Carolian Street", "Paciffic Avenue",
@@ -26,26 +28,20 @@ public class Board{
 	for (int i = 0; i < 24; i++){
             temp = newBoardNode(7-i, (24-i)*2, i*20, locs[23-i],temp);
 	}
-        
-        
-		_start.setNext(temp);
+	//add in other types later now just standard properties
+        //
+
+	_start.setNext(temp);
+
+	for(int i = 0; i < characterLocations.length; i++){
+	    characterLocations[i] = _start;
+	}
+
     }
   
     private void setCharacterLocaton(BoarNode newLoc, Character c){
-	characterLocations[c.getNumber()] = newLoc;
-            
-    }
-  
-  
-      public void 
-
-
-
-
-
-
-
-
+	characterLocations[c.getNumber()] = newLoc;            
+    } 
 
 
 }
