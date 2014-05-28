@@ -1,2 +1,2 @@
 May 27
-This weekend we made the github repo and we came up with our projet idea
+This weekend we made the github repo and we came up with our projet idea. We made an outline of the classes we will be writing and  the methods in it. After making the outline, we started working on the classes.
