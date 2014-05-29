@@ -4,7 +4,7 @@ public class Player extends Character{
 
     public Character(String n, Board b){
 	super();
-	
+	myProp = null;
     }
 
     public int roll(){
