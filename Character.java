@@ -48,5 +48,32 @@ public class Character{
             
         }
     }
+    
+    /*========== Accesor Methods =============*/
+    public String getName(){
+	return name;
+    }
+    public int getMoney(){
+	return money;
+    }
+    public int getNum(){
+	return number;
+    }
+    public ArrayList getProperties(){
+	return properties;
+    }
+    public BoardNode getLocation(){
+	return currentLocation;
+    }
+    public Board getBoard(){
+	return board;
+    }
 
+    /*========== Mutator Methods =============*/
+    public void setMoney(int n){
+	money = n;
+    }
+    public void setLocation(BoardNode nextLocation){
+	currentLocation = nextLocation;
+    }
 }
