@@ -6,11 +6,7 @@ After making the outline, we started working on the classes.
 May 28
 Today we began writing the Board and Character classes
     Character will have subclasses of: Player, and Character
+        Sisi wrote the move method in the player.
     Board will mostly be a cirully liked list of the locations on the board
         the nodes of which are modified singlly liked lists
-    Some sort of driver function will also be needed    
-    While working on the Board constructer, 
-        we realize that there was a better way of creating some kind of circle list linked
-        without having to copy and paste it, but as of now, it seemed easier to copy and paste it
-        rather than to write a for loop node and to do the same thing.
-        However, we do have in mind of changing it to the for loop node after getting the basics done.
+    Some sort of driver function will also be needed to connect all the classes together.
