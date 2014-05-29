@@ -1,33 +1,52 @@
+import java.io.*;
+
 public class Player extends Character{
     
-    ArrayList<BoardNode> myProp;
 
-    public Character(String n, Board b){
-	super();
-	myProp = null;
-    }
-
-    public int roll(){
-	super;
+    public Player(String n, Board b){
+	super(n,b);
     }
 
     public void buyProperty( BoardNode location ){
-	if (money > location.getPrice() && myProp.size() == 0)
+	if (money > location.getPrice() && location.getOwner() == null)
 	    myProp.add(location);
-	if (money > location.getPrice() && hasProperty(location)==false)
-	    myProp.add(location);
+	if (hasProperty() )
+	    System.out.println("you already own this property");
 	else{
 	    System.out.println(" Not enough money or already bought property.");
 	    // to implement: check whether another person already claimed it.
 	}
     }
-	
 
-    public void payRent(BoardNode location);
 
-    public void move(){
-	super;
+    public void payRent(BoardNode location){
+	location.getOwner().setMoney(location.getOwner().getMoney()+
+				     location.getRent());
+	money -= location.getRent();
+	System.out.println("rent paid");
     }
+
+    public boolean askBuy(BoardNode location){
+	Scanner scan = new Scanner;
+	System.out.println("Would you like to purchase " +
+			   location.getName()+ "? (" +
+			   location.getRent() +")");
+	String input = scan.nextLine();
+	if(input.equal("yes")){
+	    buyproperty(location);
+	    return true;
+	}else if(input.equals("no")){
+	    return false;
+	}else {
+	    System.out.println("invalid input");
+	    askBuy(location);
+	}
+    }
+
+    /*
+    public void move(){
+	super();
+	}*/
 
     /*========= Helper Methods ============*/
     public boolean hasProperty(BoardNode location){
