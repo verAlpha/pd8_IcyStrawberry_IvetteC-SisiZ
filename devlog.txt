@@ -5,7 +5,7 @@ After making the outline, we started working on the classes.
 
 May 28
 Today we began writing the Board and Character classes
-    Character will have subclasses of: Player, and Character
+    Character will have subclasses of: Player, and ComputerPlayer
         Sisi wrote the move method in the player.
     Board will mostly be a cirully liked list of the locations on the board
         the nodes of which are modified singlly liked lists
