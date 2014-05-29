@@ -29,7 +29,7 @@ public class Character{
     public void payRent(BoardNode location);
 
     public void askBuy(currentLocation){
-        
+        //
     }
 
     public void move(){
@@ -38,15 +38,13 @@ public class Character{
             currentLocation = currentLocation.getNext();
         }
         if (currentLocation.canPurchase()){
-            if(currentLocation.getPrice() < money){
                 askBuy(currentLocation);
-            }else{
-                System.out.println("you do not have enough movey to purchase this location");
-            }
-        }else{
-            //if has owner pay rent
-                //if can't pay rent lose
-            //if non-purchusable thing do that action
+        }else if(currentLocation.getOwner != null){
+            payRent( currentLocation );
+        }/*else if non purchaseable location
+            
+            
+            */
             
         }
     }
