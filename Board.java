@@ -26,7 +26,7 @@ public class Board{
 	BoardNode temp = _start;
 	
 	for (int i = 0; i < 24; i++){
-            temp = newBoardNode(7-i, (24-i)*2, i*20, locs[23-i],temp);
+            temp = newBoardNode(7-(i/24), (24-i)*2, i*20, locs[23-i],temp);
 	}
 	//add in other types later now just standard properties
         //
