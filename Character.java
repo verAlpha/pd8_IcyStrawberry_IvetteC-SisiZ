@@ -28,6 +28,10 @@ public class Character{
 
     public void payRent(BoardNode location);
 
+    public void askBuy(currentLocation){
+        
+    }
+
     public void move(){
         int x = roll()
         for (int i = 0; i< x; i++){
@@ -35,8 +39,7 @@ public class Character{
         }
         if (currentLocation.canPurchase()){
             if(currentLocation.getPrice() < money){
-                    //ask if they want to buy
-                    //if yer add to properties
+                askBuy(currentLocation);
             }else{
                 System.out.println("you do not have enough movey to purchase this location");
             }
