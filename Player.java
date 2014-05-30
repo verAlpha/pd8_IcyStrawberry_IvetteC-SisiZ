@@ -21,7 +21,7 @@ public class Player extends Character{
 
   
 
-    public boolean askBuy(BoardNode location){
+    public boolean Buy(BoardNode location){
 	Scanner scan = new Scanner;
 	System.out.println("Would you like to purchase " +
 			   location.getName()+ "? (" +
@@ -38,10 +38,17 @@ public class Player extends Character{
 	}
     }
 
-    /*
+    
     public void move(){
 	super();
-	}*/
+	Scanner scan = new Scanner();
+	
+	while(){
+		
+		
+	}
+	
+	}
 
     /*========= Helper Methods ============*/
     public boolean hasProperty(BoardNode location){
