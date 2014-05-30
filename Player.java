@@ -19,12 +19,7 @@ public class Player extends Character{
     }
 
 
-    public void payRent(BoardNode location){
-	location.getOwner().setMoney(location.getOwner().getMoney()+
-				     location.getRent());
-	money -= location.getRent();
-	System.out.println("rent paid");
-    }
+  
 
     public boolean askBuy(BoardNode location){
 	Scanner scan = new Scanner;
