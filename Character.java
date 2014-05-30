@@ -27,7 +27,7 @@ public class Character{
 
     public void buyProperty( BoardNode location );
 
-  public void payRent(BoardNode location){
+    public void payRent(BoardNode location){
 	location.getOwner().setMoney(location.getOwner().getMoney()+
 				     location.getRent());
 	money -= location.getRent();
