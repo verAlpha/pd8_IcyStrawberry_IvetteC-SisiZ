@@ -11,3 +11,10 @@ Today we began writing the Board and Character classes
     Board will mostly be a cirully liked list of the locations on the board
         the nodes of which are modified singlly liked lists
     Some sort of driver function will also be needed to connect all the classes together.
+
+May 39
+Today we continued working on the Character and Player class. We also started a Driver class.
+    At first, we looked over what each of us did.
+    In the Character class, we added the much necessary accesor and mutator methods.
+    In the Player class, we modified the buyProperty method and added a askBuy method.
+    
