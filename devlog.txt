@@ -17,4 +17,4 @@ Today we continued working on the Character and Player class. We also started a 
     At first, we looked over what each of us did.
     In the Character class, we added the much necessary accesor and mutator methods.
     In the Player class, we modified the buyProperty method and added a askBuy method.
-    
+We also tried to learn how to use github.    
