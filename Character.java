@@ -32,8 +32,10 @@ public class Character{
         //
     }
 
+
     public void move(){
-        int x = roll()
+        int x = roll();
+        System.out.println("You rolled a " + x + " .");
         for (int i = 0; i< x; i++){
             currentLocation = currentLocation.getNext();
         }
