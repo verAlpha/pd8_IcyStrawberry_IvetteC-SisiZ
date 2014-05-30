@@ -57,7 +57,9 @@ public class BoardNode{
     public void setOwner(Character x){
 	owner = x;
     }
-    
+    puvlic void setPurchaseable(boolean x){
+    	purchaseable = x;
+    }
   
    
 }
