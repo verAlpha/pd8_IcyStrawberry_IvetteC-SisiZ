@@ -21,7 +21,8 @@ public class Character{
         int x = (int)(Math.random() *6) +  (int)(Math.random() *6) + 2; 
         System.out.println("you rolled a: " + x);
         return x;
-        //maybe addin something for doubles later?
+        //maybe add in something for doubles later?
+        //possibly have character press something to roll?
     }
 
     public void buyProperty( BoardNode location );
@@ -40,10 +41,10 @@ public class Character{
 
     public void move(){
         int x = roll();
-        System.out.println("You rolled a " + x + " .");
         for (int i = 0; i< x; i++){
             currentLocation = currentLocation.getNext();
         }
+        System.out.println("You landed on "+ currentLocation.getName());
         if (currentLocation.canPurchase()){
                 askBuy(currentLocation);
         }else if(currentLocation.getOwner != null){
