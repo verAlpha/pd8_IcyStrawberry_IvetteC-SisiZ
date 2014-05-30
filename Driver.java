@@ -29,6 +29,7 @@ public class Driver{
     name = scan.nextLine();
     _player2.setName(name);
     
+    
     System.out.println("Roll to determine the turn order. Please type roll");
     int dice1 = _player1.roll();
     
@@ -37,23 +38,23 @@ public class Driver{
 
     if (dice1 > dice2){
       _player1.move();
-      System.out.println("Please type one of the following: buy property, pass, bank and property information, ");
+      //System.out.println("Please type one of the following: buy property, pass, bank and property information, ");
       // we have to write a pass method and a bank and property information grabbing method.
-      String response = scan.nextLine();
+     /* String response = scan.nextLine();
       if (response.equals("buy property"))
         _player1.buyProperty();
       else
-        // implement code
+        // implement code*/
     }
     // ahould we deal with the case that if they're both equal?
     else{
       _player2.move();
-      System.out.println("Please type one of the following: buy property, pass, bank and property information, ");
+     /* System.out.println("Please type one of the following: buy property, pass, bank and property information, ");
       // we have to write a pass method and a bank and property information grabbing method.
       String response = scan.nextLine();
       if (response.equals("buy property"))
         _player2.buyProperty();
-      else
+      else*/
         // implement code
     }
   }
