@@ -4,7 +4,7 @@ public class Character{
 
     String name;
     int money;
-    int number
+    int number;
     ArrayList<BoardNode> properties;
     BoardNode currentLocation;
     Board board;
@@ -25,7 +25,9 @@ public class Character{
         //possibly have character press something to roll?
     }
 
-    public void buyProperty( BoardNode location );
+    public boolean buyProperty( BoardNode location ){
+	return false;
+    }
 
     public void payRent(BoardNode location){
 	location.getOwner().setMoney(location.getOwner().getMoney()+
@@ -34,7 +36,7 @@ public class Character{
 	System.out.println("rent paid");
     }
     
-    public void askBuy(currentLocation){
+    public void askBuy(BoardNode currentLocation){
         //
     }
 
@@ -46,16 +48,16 @@ public class Character{
         }
         System.out.println("You landed on "+ currentLocation.getName());
         if (currentLocation.canPurchase()){
-                askBuy(currentLocation);
-        }else if(currentLocation.getOwner != null){
+	    askBuy(currentLocation);
+        }else if(currentLocation.getOwner() != null){
             payRent( currentLocation );
         }/*else if non purchaseable location
             
             
-            */
+	  */
             
-        }
     }
+
     
     /*========== Accesor Methods =============*/
     public String getName(){
@@ -64,7 +66,7 @@ public class Character{
     public int getMoney(){
 	return money;
     }
-    public int getNum(){
+    public int getNumber(){
 	return number;
     }
     public ArrayList getProperties(){
@@ -84,4 +86,8 @@ public class Character{
     public void setLocation(BoardNode nextLocation){
 	currentLocation = nextLocation;
     }
+    public void setName(String s){
+	name = s;
+    }
+
 }
