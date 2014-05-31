@@ -6,6 +6,7 @@ public class Character{
     int money;
     int number;
     ArrayList<BoardNode> properties;
+    //maybe turn into array of arrays? to sort by color?   
     BoardNode currentLocation;
     Board board;
 
@@ -19,7 +20,7 @@ public class Character{
 
     public int roll(){
         int x = (int)(Math.random() *6) +  (int)(Math.random() *6) + 2; 
-        System.out.println("you rolled a: " + x);
+        System.out.println(name+" rolled a: " + x);
         return x;
         //maybe add in something for doubles later?
         //possibly have character press something to roll?
@@ -46,15 +47,16 @@ public class Character{
         for (int i = 0; i< x; i++){
             currentLocation = currentLocation.getNext();
         }
-        System.out.println("You landed on "+ currentLocation.getName());
-        if (currentLocation.canPurchase()){
+        System.out.println(name+" landed on "+ currentLocation.getName());
+	if(currentLocation.getOwner() != null){
+            payRent( currentLocation );	
+	}else if (currentLocation.canPurchase()){
 	    askBuy(currentLocation);
-        }else if(currentLocation.getOwner() != null){
-            payRent( currentLocation );
-        }/*else if non purchaseable location
-            
-            
-	  */
+        }
+	/*
+	  non-properties do later
+	  optional stuff like buying houses in subclasses
+	 */
             
     }
 
