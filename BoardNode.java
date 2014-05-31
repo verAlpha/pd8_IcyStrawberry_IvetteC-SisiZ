@@ -11,7 +11,7 @@ public class BoardNode{
 	color = c;
 	rent = r;
 	price = p;
-	name = s
+	name = s;
 	next = b;
 	owner = null;
     }
@@ -35,7 +35,7 @@ public class BoardNode{
     public Character  getOwner(){
 	return owner;
     }
-    puublic boolean canPurchase(){
+    public boolean canPurchase(){
     	return purchaseable;
     }
     /*===================^ Mutator Methods ^====================*/      
@@ -48,7 +48,7 @@ public class BoardNode{
     public void setName(String x){
 	name = x;
     }
-    public void setPrice(int x){
+    public void setColor(int x){
 	color = x;
     }
     public void setNext(BoardNode x){
@@ -57,7 +57,7 @@ public class BoardNode{
     public void setOwner(Character x){
 	owner = x;
     }
-    puvlic void setPurchaseable(boolean x){
+    public void setPurchaseable(boolean x){
     	purchaseable = x;
     }
   
