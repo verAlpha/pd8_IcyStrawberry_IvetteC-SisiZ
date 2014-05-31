@@ -8,11 +8,6 @@ public class Driver{
 
 
 
-
-
-
-
-
     public static void main( String[] args ){
 	Board _board = new Board(2);
 	boolean end = false;//determines if the game is over
@@ -30,24 +25,29 @@ public class Driver{
 	_player2.setName(name);
     
     
-	System.out.println("Roll to determine the turn order. Please type roll");
+	System.out.println("Rolling to determine the turn order.");
 	int dice1 = _player1.roll();
     
-	System.out.println("Roll to determine the turn order. Please type roll");
+	System.out.println("Rolling to determine the turn order.");
 	int dice2 = _player2.roll();
 
-	while(!end){
-	    // how would we deal with the case that if they're both equal? reroll?
-	    if (dice1 > dice2){
+
+	// how would we deal with the case that if they're both equal? reroll?
+	if (dice1 > dice2){
+	    System.out.println(_player1.getName() +" is going first");
+	    while(!end){
 		_player1.move();
 		_player2.move();
+	    }
 
-	    }else{
+	}else{
+	    System.out.println(_player2.getName() +" is going first");
+	    while(!end){
 		_player2.move();
 		_player1.move();
 	    }
 	}
-      
-
+	    
+	    
     }
 }
