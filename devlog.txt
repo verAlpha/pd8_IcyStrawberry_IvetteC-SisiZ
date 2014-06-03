@@ -22,3 +22,6 @@ We also tried to learn how to use github.
 May 30
     This weekend we finally got around to testing stuff (both getting rid of the many little errors 
     to get it to compile, and getting the very basics to do what it's supposed to.
+
+June 2
+	Today we finnished learning how to use github
