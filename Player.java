@@ -22,7 +22,7 @@ public class Player extends Character{
 	    return false;
 	}else {
 	    System.out.println("invalid input");
-	    askBuy(location);
+	    super.buyProperty(location);
 	}
 	return false;
     }
@@ -43,24 +43,25 @@ public class Player extends Character{
 			      ", or you typed it out wrong,");
 	}else if( properties[x%3] != null &&
 		  properties[x%3 + 1] != null &&
-		  properties[x%3 + 2] != null &&){
+		  properties[x%3 + 2] != null ){
 	    System.out.println("you don't own all the "+"__color"+" properties");
 			       //fill in color?
-	}else if ((color/4) * 50 > money){
-	    System.out.println("you do not have enough money to buy ab house for" +
-			       properties[x].getName())
+	}else if ((properties[x].getColor()/4) * 50 > money){
+	    System.out.println("you do not have enough money to buy a house for" +
+			       properties[x].getName());
 
 	} else{
 	    //maybe have ability to buy multiple houses at once?
 	    properties[x].addHouse();
-	    money -= (color/4) * 5;
+	    money -= properties[x].getColor()/4 * 50 ;
 	}
     }
 
     public void move(){
 	super.move();
 	boolean boo = true;
-	System.out,println(name+ ", what would you like to do anything else? (buy houses, trade, pass)"); 
+	System.out.println(name+ ", what would you like to do anything else?" +
+			   "(buy houses, trade, pass)"); 
 	while(boo){
 	    Scanner scan = new Scanner(System.in);
 	    String input = scan.nextLine();
@@ -68,7 +69,7 @@ public class Player extends Character{
 		System.out.println(name+ "'s turn is over");
 		boo = false;
 	    }else if(input.equals("buy house")){
-		buyhouse();
+		buyHouse();
 	    }else if(input.equals("trade")){
 	    
 	    }
