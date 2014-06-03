@@ -5,6 +5,7 @@ public class BoardNode{
     private BoardNode next;
     private Character owner;
     private boolean purchaseable;
+    private int houses;
 
     public BoardNode(boolean x, int c, int r, int p, String s, BoardNode b){
 	purchaseable = x;
@@ -14,6 +15,7 @@ public class BoardNode{
 	name = s;
 	next = b;
 	owner = null;
+	houses = 0;
     }
 
     /*===================V Accessor Methods V====================*/    
@@ -38,17 +40,20 @@ public class BoardNode{
     public boolean canPurchase(){
     	return purchaseable;
     }
+    public int getNumHouses(){
+	return houses
+    }
     /*===================^ Mutator Methods ^====================*/      
-    public void setPrice(int x){
+    public void setPrice(int x){//not nesssecary?
 	price = x;
     }
-    public void setRent(int x){
+    public void setRent(int x){//not nessecary?
 	rent = x;
     }
-    public void setName(String x){
+    public void setName(String x){//not nesssecary?
 	name = x;
     }
-    public void setColor(int x){
+    public void setColor(int x){//not nesssecary?
 	color = x;
     }
     public void setNext(BoardNode x){
@@ -60,6 +65,17 @@ public class BoardNode{
     public void setPurchaseable(boolean x){
     	purchaseable = x;
     }
-  
-   
+
+    public void addHouse(){
+	if(houses >= 5){
+	    System.out.println("you already have a hotel on" + name
+			       ", you may not further upgrade it.");
+	}else{
+	    houses += 1;
+	    rent = (rent+color) * (color + 1) + 100;
+	    //maybe use a better system to determine rent
+	    System.out.println("you now have " + (houses + 1) 
+			       + " on "+ name);
+	}
+    }
 }

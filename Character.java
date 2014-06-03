@@ -54,7 +54,6 @@ public class Character{
 	money -= location.getRent();
 	System.out.println("rent paid");
     }
-   
 
     public void move(){
         int x = roll();

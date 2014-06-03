@@ -27,21 +27,34 @@ public class Player extends Character{
 	return false;
     }
 
-    public BoardNode buyHouse(){
+    public void buyHouse(){
 	System.out.println("for which property would you like to buy a house?");
 	Scanner scan = new Scanner(System.in);
 	String prop = scan.nextLine();
-	boolean own = false;
-	for (BoardNode x: properties){
-	    if (x.getName() == prop){
-		own = true;
+	int x = -1;
+	for (int i = 0; i < properties.length; i++){
+	    if (properties[i].getName().equals( prop )){
+		x = i;
 		break;
 	    }
 	}
-	if (own == false){
-	    System.out.println("you do not own that location or you entered it wrong,");
-	    return null;
-}	
+	if (x == -1){
+	    System.out.println("you do not own " + prop +
+			      ", or you typed it out wrong,");
+	}else if( properties[x%3] != null &&
+		  properties[x%3 + 1] != null &&
+		  properties[x%3 + 2] != null &&){
+	    System.out.println("you don't own all the "+"__color"+" properties");
+			       //fill in color?
+	}else if ((color/4) * 50 > money){
+	    System.out.println("you do not have enough money to buy ab house for" +
+			       properties[x].getName())
+
+	} else{
+	    //maybe have ability to buy multiple houses at once?
+	    properties[x].addHouse();
+	    money -= (color/4) * 5;
+	}
     }
 
     public void move(){
