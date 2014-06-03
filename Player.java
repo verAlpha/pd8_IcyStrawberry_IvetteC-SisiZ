@@ -41,7 +41,7 @@ public class Player extends Character{
 	if (own == false){
 	    System.out.println("you do not own that location or you entered it wrong,");
 	    return null;
-
+}	
     }
 
     public void move(){
