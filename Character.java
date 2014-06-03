@@ -5,7 +5,7 @@ public class Character{
     String name;
     int money;
     int number;
-    ArrayList<BoardNode> properties;
+    BoardNode[] properties;
     //maybe turn into array of arrays? to sort by color?   
     BoardNode currentLocation;
     Board board;
@@ -13,7 +13,7 @@ public class Character{
     public Character(String n, Board b){
             name = n;
             money = 1500;
-            properties = null;
+            properties = new BoardNode[24];
             board = b;
             currentLocation = b.start();
     }
@@ -27,7 +27,25 @@ public class Character{
     }
 
     public boolean buyProperty( BoardNode location ){
-	return false;
+	if(location.getOwner() != null){
+	    System.out.println(location.getOwner().getName() + 
+			       " already owns " + location.getName() );
+	    return false;
+	}else if(location.getPrice() > money){
+	    System.out.println("you do not have enough money to buy "
+			       + location.getName());
+	    return false;
+	}else{
+	    int x = location.getColor();
+	    for (int i = 0; i < 3; i++){
+		if (properties[x*3 + i] == null){
+		    properties[x*3 + i] = location;
+		    break;
+		}
+	    }
+	    location.setOwner(this);
+	    return true;
+	}
     }
 
     public void payRent(BoardNode location){
@@ -36,11 +54,7 @@ public class Character{
 	money -= location.getRent();
 	System.out.println("rent paid");
     }
-    
-    public void askBuy(BoardNode currentLocation){
-        //
-    }
-
+   
 
     public void move(){
         int x = roll();
@@ -51,7 +65,7 @@ public class Character{
 	if(currentLocation.getOwner() != null){
             payRent( currentLocation );	
 	}else if (currentLocation.canPurchase()){
-	    askBuy(currentLocation);
+	    buyProperty(currentLocation);
         }
 	/*
 	  non-properties do later
@@ -71,7 +85,7 @@ public class Character{
     public int getNumber(){
 	return number;
     }
-    public ArrayList getProperties(){
+    public ArrayList<BoardNode>[] getProperties(){
 	return properties;
     }
     public BoardNode getLocation(){

@@ -9,14 +9,14 @@ public class Player extends Character{
 	super(n,b);
     }
 
-    public boolean askBuy(BoardNode location){
+    public boolean buyProperty(BoardNode location){
 	Scanner scan = new Scanner(System.in);
 	System.out.println("Would you like to purchase " +
 			   location.getName()+ "? (" +
 			   location.getRent() +")");
 	String input = scan.nextLine();
 	if(input.equals("yes")){
-	    buyProperty(location);
+	    super.buyProperty(location);
 	    return true;
 	}else if(input.equals("no")){
 	    return false;
@@ -27,7 +27,23 @@ public class Player extends Character{
 	return false;
     }
 
-  
+    public BoardNode buyHouse(){
+	System.out.println("for which property would you like to buy a house?");
+	Scanner scan = new Scanner(System.in);
+	String prop = scan.nextLine();
+	boolean own = false;
+	for (BoardNode x: properties){
+	    if (x.getName() == prop){
+		own = true;
+		break;
+	    }
+	}
+	if (own == false){
+	    System.out.println("you do not own that location or you entered it wrong,");
+	    return null;
+
+    }
+
     public void move(){
 	super.move();
 	boolean boo = true;
@@ -36,9 +52,10 @@ public class Player extends Character{
 	    Scanner scan = new Scanner(System.in);
 	    String input = scan.nextLine();
 	    if(input.equals("pass")){
+		System.out.println(name+ "'s turn is over");
 		boo = false;
 	    }else if(input.equals("buy house")){
-	    
+		buyhouse();
 	    }else if(input.equals("trade")){
 	    
 	    }
