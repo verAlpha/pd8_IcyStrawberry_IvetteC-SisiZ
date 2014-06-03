@@ -84,7 +84,7 @@ public class Character{
     public int getNumber(){
 	return number;
     }
-    public ArrayList<BoardNode>[] getProperties(){
+    public BoardNode[] getProperties(){
 	return properties;
     }
     public BoardNode getLocation(){
