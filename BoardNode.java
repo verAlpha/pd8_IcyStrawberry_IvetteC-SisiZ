@@ -41,7 +41,7 @@ public class BoardNode{
     	return purchaseable;
     }
     public int getNumHouses(){
-	return houses
+	return houses;
     }
     /*===================^ Mutator Methods ^====================*/      
     public void setPrice(int x){//not nesssecary?
@@ -68,7 +68,7 @@ public class BoardNode{
 
     public void addHouse(){
 	if(houses >= 5){
-	    System.out.println("you already have a hotel on" + name
+	    System.out.println("you already have a hotel on" + name +
 			       ", you may not further upgrade it.");
 	}else{
 	    houses += 1;
