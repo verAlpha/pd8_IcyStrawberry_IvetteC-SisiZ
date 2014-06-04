@@ -25,3 +25,6 @@ May 30
 
 June 2
 	Today we finnished learning how to use github
+
+June 2
+     Today started to make cards, adn decks for the chance/comunity chest piles in the game, and we began to add additional spaces on the board(non properties) and we added the ability to buy houses on a property you own. At this point the game runs really basiclly but not all the new features we began have been integrated, also these is no end game condition yet
