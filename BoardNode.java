@@ -40,7 +40,7 @@ public class BoardNode{
     public boolean canPurchase(){
     	return purchaseable;
     }
-    public int getNumHouses(){
+    public int getHouseNum(){
 	return houses;
     }
     /*===================^ Mutator Methods ^====================*/      

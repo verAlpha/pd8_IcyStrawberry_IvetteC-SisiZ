@@ -7,7 +7,7 @@ public class Character{
     String name;
     int money;
     int number;
-    BoardNode[] properties;5
+    BoardNode[] properties;
     BoardNode currentLocation;
     Board board;
 
@@ -25,6 +25,21 @@ public class Character{
         return x;
         //maybe add in something for doubles later?
         //possibly have character press something to roll?
+    }
+    
+
+    public void getStats(){
+	System.out.println("name: " + name);
+	System.out.println("money: $" + money);
+	String s = "";
+	for(BoardNode x: properties){
+	    if(x != null){
+		s+= x.getName() + "\n ( "+ x.getHouseNum() + " with houses)";
+	    }
+	    System.out.println("properties: " + s);
+	    //make function to print this whith houses too
+	    System.out.println("current location: " + currentLocation.getName());
+	}
     }
 
     public boolean buyProperty( BoardNode location ){
@@ -57,20 +72,20 @@ public class Character{
 	System.out.println("rent paid");
     }
 
-    public static boolean endConditions(){
+    public boolean endConditions(){
 	//true means game over
 	//false means game not over
-	if(c1.getMoney() <= 0){
-	    System.out.println(name + "has no money left and had lost");
+	if(money <= 0){
+	    System.out.println( name + "has no money left and had lost");
 	    return true;
 	}
-	reutrn flase;
+	return false;
 	//more conditions later?
 	//add something in for who has won?
 	//if one player loses does the game end? or others continue?
     }
 
-    public boolean move(){
+    public void  moveHelp(){
         int x = roll();
         for (int i = 0; i< x; i++){
             currentLocation = currentLocation.getNext();
@@ -84,9 +99,7 @@ public class Character{
 	/*
 	  non-properties do later
 	  optional stuff like buying houses in subclasses
-	 */
-	return endConditions();
-	
+	 */	
     }
 
     

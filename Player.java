@@ -36,14 +36,14 @@ public class Player extends Character{
     }
 
     public void buyHouse(){
-	System.out.println("for which property would you like to buy a house?");
-	Scanner scan = new Scanner(System.in);
-	String prop = scan.nextLine();
-	int x = -1;
-	for (int i = 0; i < properties.length; i++){
-	    if (properties[i] != null){
-		if( properties[i].getName().equals( prop )){
-		    x = i;
+     	System.out.println("for which property would you like to buy a house?");
+     	Scanner scan = new Scanner(System.in);
+     	String prop = scan.nextLine();
+     	int x = -1;
+     	for (int i = 0; i < properties.length; i++){
+     	    if (properties[i] != null){
+     		if( properties[i].getName().equals( prop )){
+     		    x = i;
 		    break;
 		}
 	    }
@@ -67,8 +67,8 @@ public class Player extends Character{
 	}
     }
 
-    public void move(){
-	super.move();
+    public boolean  move(){
+	moveHelp();
 	boolean boo = true;
 	System.out.println(name+ ", what would you like to do anything else?" +
 			   "(buy house, trade, get stats, pass)"); 
@@ -89,6 +89,8 @@ public class Player extends Character{
 	    }
 		
 	}
+	return endConditions();
+
 	
     }
 

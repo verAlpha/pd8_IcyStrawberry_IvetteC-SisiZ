@@ -18,11 +18,11 @@ public class Board{
 			 "Baltic Avenue", "Mediteranina Avenue","Oxford Street"};
 	BoardNode temp = _start;
 	
-	for (int i = 0; i < loc.length; i++){
-	    if (i % 4 == 0)
+	for (int i = 0; i < locs.length; i++){
+	    if (locs[i].equals("Card") || locs[i].equals("Jail"))
 		temp = new BoardNode(false,-1, -1, -1, locs[i], temp);
 	    else
-		temp = new BoardNode(true, 7-(i/loc.length), (loc.length-i)*2,
+		temp = new BoardNode(true, 7-(i/locs.length), (locs.length-i)*2,
 				     i*20, locs[i],temp);
 	}
 	//add in other types later now just standard properties
