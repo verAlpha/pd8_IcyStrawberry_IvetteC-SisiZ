@@ -57,7 +57,7 @@ public class Character{
 	System.out.println("rent paid");
     }
 
-   public static boolean endConditions(Character c1, Character c2){
+    public static boolean endConditions(){
 	//true means game over
 	//false means game not over
 	if(c1.getMoney() <= 0){
@@ -66,6 +66,8 @@ public class Character{
 	}
 	reutrn flase;
 	//more conditions later?
+	//add something in for who has won?
+	//if one player loses does the game end? or others continue?
     }
 
     public boolean move(){
