@@ -6,9 +6,7 @@ public class Driver{
 
 
 
-
-
-
+ 
 
     public static void main( String[] args ){
 	Board _board = new Board(2);
@@ -38,15 +36,15 @@ public class Driver{
 	if (dice1 > dice2){
 	    System.out.println(_player1.getName() +" is going first");
 	    while(!end){
-		_player1.move();
-		_player2.move();
+		end = _player1.move();
+		end = _player2.move();
 	    }
 
 	}else{
 	    System.out.println(_player2.getName() +" is going first");
 	    while(!end){
-		_player2.move();
-		_player1.move();
+		end = _player2.move();
+		end = _player1.move();
 	    }
 	}
 	    

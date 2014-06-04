@@ -7,8 +7,7 @@ public class Character{
     String name;
     int money;
     int number;
-    BoardNode[] properties;
-    //maybe turn into array of arrays? to sort by color?   
+    BoardNode[] properties;5
     BoardNode currentLocation;
     Board board;
 
@@ -58,7 +57,18 @@ public class Character{
 	System.out.println("rent paid");
     }
 
-    public void move(){
+   public static boolean endConditions(Character c1, Character c2){
+	//true means game over
+	//false means game not over
+	if(c1.getMoney() <= 0){
+	    System.out.println(name + "has no money left and had lost");
+	    return true;
+	}
+	reutrn flase;
+	//more conditions later?
+    }
+
+    public boolean move(){
         int x = roll();
         for (int i = 0; i< x; i++){
             currentLocation = currentLocation.getNext();
@@ -73,7 +83,8 @@ public class Character{
 	  non-properties do later
 	  optional stuff like buying houses in subclasses
 	 */
-            
+	return endConditions();
+	
     }
 
     
