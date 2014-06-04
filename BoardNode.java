@@ -71,11 +71,12 @@ public class BoardNode{
 	    System.out.println("you already have a hotel on" + name +
 			       ", you may not further upgrade it.");
 	}else{
-	    houses += 1;
+	     houses += 1;
 	    rent = (rent+color) * (color + 1) + 100;
 	    //maybe use a better system to determine rent
-	    System.out.println("you now have " + (houses + 1) 
-			       + " on "+ name);
+	    System.out.println("you now have " + (houses) 
+			       + "house(s)  on "+ name);
+	    //fix grammar later maybe?
 	}
     }
 }
