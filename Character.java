@@ -45,6 +45,7 @@ public class Character{
 		    break;
 		}
 	    }
+	    money -= location.getPrice();
 	    location.setOwner(this);
 	    return true;
 	}
