@@ -12,8 +12,8 @@ public class Player extends Character{
     public boolean buyProperty(BoardNode location){
 	Scanner scan = new Scanner(System.in);
 	System.out.println("Would you like to purchase " +
-			   location.getName()+ "? (" +
-			   location.getRent() +")");
+			   location.getName()+ "? ($" +
+			   location.getPrice() +")");
 	String input = scan.nextLine();
 	if(input.equals("yes")){
 	    super.buyProperty(location);
@@ -33,9 +33,11 @@ public class Player extends Character{
 	String prop = scan.nextLine();
 	int x = -1;
 	for (int i = 0; i < properties.length; i++){
-	    if (properties[i].getName().equals( prop )){
-		x = i;
-		break;
+	    if (properties[i] != null){
+		if( properties[i].getName().equals( prop )){
+		    x = i;
+		    break;
+		}
 	    }
 	}
 	if (x == -1){
@@ -61,7 +63,7 @@ public class Player extends Character{
 	super.move();
 	boolean boo = true;
 	System.out.println(name+ ", what would you like to do anything else?" +
-			   "(buy houses, trade, pass)"); 
+			   "(buy house, trade, pass)"); 
 	while(boo){
 	    Scanner scan = new Scanner(System.in);
 	    String input = scan.nextLine();
@@ -72,6 +74,8 @@ public class Player extends Character{
 		buyHouse();
 	    }else if(input.equals("trade")){
 	    
+	    }else{
+		System.out.println("invalid input, try again");
 	    }
 		
 	}
