@@ -27,6 +27,14 @@ public class Player extends Character{
 	return false;
     }
 
+    public void getStats(){
+	System.out.println("name: " + name);
+	System.out.println("money: $" + money);
+	System.out.println("properties: ");
+	//make function to print this whith houses too
+	System.out.println("current location" + currentLocation.getName());
+    }
+
     public void buyHouse(){
 	System.out.println("for which property would you like to buy a house?");
 	Scanner scan = new Scanner(System.in);
@@ -63,7 +71,7 @@ public class Player extends Character{
 	super.move();
 	boolean boo = true;
 	System.out.println(name+ ", what would you like to do anything else?" +
-			   "(buy house, trade, pass)"); 
+			   "(buy house, trade, get stats, pass)"); 
 	while(boo){
 	    Scanner scan = new Scanner(System.in);
 	    String input = scan.nextLine();
@@ -72,6 +80,8 @@ public class Player extends Character{
 		boo = false;
 	    }else if(input.equals("buy house")){
 		buyHouse();
+	    }else if(input.equals("get stats")){
+		getStats();
 	    }else if(input.equals("trade")){
 	    
 	    }else{
