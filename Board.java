@@ -7,27 +7,23 @@ public class Board{
 	characterLocations = new BoardNode[characternumber];
 	
 	_start = new BoardNode(false,-1, -1, -1, "GO", null);
-	/*BoardNode temp1 = new BoardNode(7, 50, 450, "loc last", _start);
-	BoardNode temp2 = new BoardNode(7, 35, 350, "loc last-1", temp1);
-	BoardNode temp3 = new BoardNode(6, 27, 300, "loc last-2", temp2);
-	BoardNode temp4 = new BoardNode(6, 25, 250, "loc last-3", temp3);
-	BoardNode temp5 = new BoardNode(6, 23, 200, "loc last-4", temp4);
-	BoardNode temp6 = new BoardNode(5, 20, 150, "loc last-5", temp5);
-	//add the rest of the locations in
-        */
-        String[] locs = {"Boardwalk", "Park Place", "Bond Street",
-			 "Pennsylvania Avenue","North Carolian Street", "Paciffic Avenue",
-			 "Marvin Garens","Ventor Avenue", "Atlantic Avenue",
-			 "Illinois Avenue", "Indiana Avenue","Kentuky Avenue",
-			 "New York Avenue", "Tennesse Avenue", "St.James Place",
-			 "Virginia Avenue", "States Avenue","St.Charles Place",
-			 "Connectict Avenue", "Vermont Avenue","Oriental Avenue",
+
+        String[] locs = {"Boardwalk", "Park Place", "Bond Street", "Card",
+			 "Pennsylvania Avenue","North Carolian Street", "Paciffic Avenue","Card",
+			 "Marvin Garens","Ventor Avenue", "Atlantic Avenue","Card",
+			 "Illinois Avenue", "Indiana Avenue","Kentuky Avenue","Jail",
+			 "New York Avenue", "Tennesse Avenue", "St.James Place","Card",
+			 "Virginia Avenue", "States Avenue","St.Charles Place","Card",
+			 "Connectict Avenue", "Vermont Avenue","Oriental Avenue","Card",
 			 "Baltic Avenue", "Mediteranina Avenue","Oxford Street"};
 	BoardNode temp = _start;
 	
-	for (int i = 0; i < 24; i++){
-            temp = new BoardNode(true, 7-(i/24), (24-i)*2,
-				i*20, locs[23-i],temp);
+	for (int i = 0; i < loc.length; i++){
+	    if (i % 4 == 0)
+		temp = new BoardNode(false,-1, -1, -1, locs[i], temp);
+	    else
+		temp = new BoardNode(true, 7-(i/loc.length), (loc.length-i)*2,
+				     i*20, locs[i],temp);
 	}
 	//add in other types later now just standard properties
         //
