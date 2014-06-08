@@ -75,7 +75,7 @@ public class BoardNode{
 	    rent = (rent+color) * (color + 1) + 100;
 	    //maybe use a better system to determine rent
 	    System.out.println("you now have " + (houses) 
-			       + "house(s)  on "+ name);
+			       + " house(s)  on "+ name);
 	    //fix grammar later maybe?
 	}
     }

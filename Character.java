@@ -31,16 +31,28 @@ public class Character{
     public void getStats(){
 	System.out.println("name: " + name);
 	System.out.println("money: $" + money);
-	String s = "";
+	System.out.println("properties:");
 	for(BoardNode x: properties){
 	    if(x != null){
-		s+= x.getName() + "\n ( "+ x.getHouseNum() + " with houses)";
+		System.out.println(" - "+ x.getName() + " (" +
+				    "with " +  x.getHouseNum() + " houses)");
 	    }
-	    System.out.println("properties: " + s);
-	    //make function to print this whith houses too
-	    System.out.println("current location: " + currentLocation.getName());
 	}
+	System.out.println("current location: " + currentLocation.getName());
     }
+   
+    /* 
+    public static String stringify(BoardNode[] b){
+	String s = "";
+	for(int i = 0; i < b.length; i++){
+	    if(b[i] == null){
+		s+= "null , ";
+	    }else {
+		s+= b[i].getName() + " , ";
+	    }
+	}
+	return s;
+	}*/
 
     public boolean buyProperty( BoardNode location ){
 	if(location.getOwner() != null){
@@ -56,9 +68,13 @@ public class Character{
 	    for (int i = 0; i < 3; i++){
 		if (properties[x*3 + i] == null){
 		    properties[x*3 + i] = location;
+		    // System.out.println(stringify(properties));
+		    ////////
 		    break;
+		   
 		}
 	    }
+	    
 	    money -= location.getPrice();
 	    location.setOwner(this);
 	    return true;
