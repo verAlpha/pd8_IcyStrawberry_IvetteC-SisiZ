@@ -6,7 +6,7 @@ public class Board{
     public Board(int characternumber){
 	characterLocations = new BoardNode[characternumber];
 	
-	_start = new BoardNode(false,-1, -1, -1, "GO", null);
+	_start = new BoardNode("GO",-1, -1, -1, "GO", null);
 
         String[] locs = {"Boardwalk", "Park Place", "Bond Street", "Card",
 			 "Pennsylvania Avenue","North Carolian Street", "Paciffic Avenue","Card",
@@ -19,11 +19,14 @@ public class Board{
 	BoardNode temp = _start;
 	
 	for (int i = 0; i < locs.length; i++){
-	    if (locs[i].equals("Card") || locs[i].equals("Jail"))
-		temp = new BoardNode(false,-1, -1, -1, locs[i], temp);
-	    else
-		temp = new BoardNode(true, 7-(i/locs.length), (locs.length-i)*2,
+	    if (locs[i].equals("Card")){
+		temp = new BoardNode("Card",-1, -1, -1, locs[i], temp);
+	    }else if(locs[i].equals("Jail")){
+		temp = new BoardNode("Jail",-1, -1, -1, locs[i], temp);
+	    }else{
+		temp = new BoardNode("Property", 7-(i/locs.length), (locs.length-i)*2,
 				     i*20, locs[i],temp);
+	    }
 	}
 	//add in other types later now just standard properties
         //

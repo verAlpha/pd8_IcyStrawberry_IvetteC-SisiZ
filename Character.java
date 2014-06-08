@@ -107,15 +107,25 @@ public class Character{
             currentLocation = currentLocation.getNext();
         }
         System.out.println(name+" landed on "+ currentLocation.getName());
-	if(currentLocation.getOwner() != null){
-            payRent( currentLocation );	
-	}else if (currentLocation.canPurchase()){
-	    buyProperty(currentLocation);
-        }
-	/*
-	  non-properties do later
-	  optional stuff like buying houses in subclasses
-	 */	
+	if (currentLocation.getType().equals("Property")){
+	    if(currentLocation.getOwner() != null){
+		payRent( currentLocation );	
+	    }else{
+		buyProperty(currentLocation);
+	    }
+	}else if (currentLocation.getType().equals("Card")){
+	    //board.getDeck().nextCard().getAction()????
+
+	    //cards initiall just add or subtract $??
+	}else if (currentLocation.getType().equals("Jail")){
+	    //do nothing
+	    System.out.println("just visting jail");
+	}else if (currentLocation.getType().equals("GO")){
+	    //do nothing
+	    System.out.println("pass go collect 200");
+	    money += 200;
+	}
+	//add free parking??
     }
 
     

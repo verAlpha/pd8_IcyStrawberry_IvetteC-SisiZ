@@ -4,11 +4,11 @@ public class BoardNode{
     private String name;
     private BoardNode next;
     private Character owner;
-    private boolean purchaseable;
+    private String type;
     private int houses;
 
-    public BoardNode(boolean x, int c, int r, int p, String s, BoardNode b){
-	purchaseable = x;
+    public BoardNode(String x, int c, int r, int p, String s, BoardNode b){
+	type = x;
 	color = c;
 	rent = r;
 	price = p;
@@ -37,8 +37,8 @@ public class BoardNode{
     public Character  getOwner(){
 	return owner;
     }
-    public boolean canPurchase(){
-    	return purchaseable;
+    public String getType(){
+    	return type;
     }
     public int getHouseNum(){
 	return houses;
@@ -62,8 +62,8 @@ public class BoardNode{
     public void setOwner(Character x){
 	owner = x;
     }
-    public void setPurchaseable(boolean x){
-    	purchaseable = x;
+    public void setType(String x){
+    	type = x;
     }
 
     public void addHouse(){
