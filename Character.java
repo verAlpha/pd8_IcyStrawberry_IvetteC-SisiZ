@@ -94,7 +94,25 @@ public class Character{
 	    money += c.getAmountAdded();
 	    System.out.println(c.getName());
 	}
-	//else if type == ect.
+	/*else if (type.equals("changeLocation")){
+	    boolean go = false;
+	    while(currentLocation.getNext().getName() != c.getNewLoc()){
+		if (c.getNext().getName().equals("GO")){
+		    go = true;
+		}
+		current Location = currentLocation.getNext()){
+	    }
+	    currentLocation= currentLocation.getNext();
+	    if(go){
+	    System.out.println("you passed GO as you were going to"
+	    + c.getnewLoc() + ", collect $200";
+	    }
+	    //do action of location
+	    }
+
+	}
+
+	 */
     }
 
     public boolean endConditions(){

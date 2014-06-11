@@ -54,12 +54,12 @@ public class Deck{
     }
 
     //maybe add in some sort of shuffling mechanism??
-    public void shuffle(){
+    /* public void shuffle(){
 	Card[] temp = new Card[deck.length];
 	
 
 
-    }
+	}*/
 
 
 }

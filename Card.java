@@ -7,7 +7,7 @@ public class Card {
 
     public Card(String t, String s, int n){
 	name = s;
-	cardNumber = n;
+	ammountAdded = n;
 	type = t;
     }
 
