@@ -2,7 +2,7 @@ public Card {
     
     private String name;
     private int cardNumber;
-    private String message;//add real card things like bank error collect 100
+    private String message;//add real card things like bank error collect 100?
 
     public Card(String s, int n){
 	name = s;
