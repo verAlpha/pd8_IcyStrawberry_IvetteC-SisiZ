@@ -2,6 +2,8 @@ public class Board{
       
     BoardNode _start;
     BoardNode[] characterLocations;
+    Deck _chance;
+    //Deck _communityChest;
       
     public Board(int characternumber){
 	characterLocations = new BoardNode[characternumber];
@@ -36,7 +38,13 @@ public class Board{
 	for(int i = 0; i < characterLocations.length; i++){
 	    characterLocations[i] = _start;
 	}
+	_chance = new Deck();
+	//_communityChest = new Deck();
 
+    }
+
+    public Deck getChance(){
+	return _chance;
     }
   
     public void setCharacterLocaton(BoardNode newLoc, Character c){

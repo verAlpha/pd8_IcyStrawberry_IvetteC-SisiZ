@@ -88,6 +88,10 @@ public class Character{
 	System.out.println("rent paid");
     }
 
+    public void drawCard(){
+	Card c = board.getChance().getNext();
+    }
+
     public boolean endConditions(){
 	//true means game over
 	//false means game not over
@@ -99,6 +103,7 @@ public class Character{
 	//more conditions later?
 	//add something in for who has won?
 	//if one player loses does the game end? or others continue?
+	//ADD SOMETHING ABOUT NOT BEING ABLE TO PAY RENT
     }
 
     public void  moveHelp(){
@@ -114,8 +119,7 @@ public class Character{
 		buyProperty(currentLocation);
 	    }
 	}else if (currentLocation.getType().equals("Card")){
-	    //board.getDeck().nextCard().getAction()????
-
+	    drawCard();
 	    //cards initiall just add or subtract $??
 	}else if (currentLocation.getType().equals("Jail")){
 	    //do nothing

@@ -1,4 +1,4 @@
-public Card {
+public class Card {
     
     private String name;
     private int cardNumber;
@@ -13,7 +13,7 @@ public Card {
 	return name;
     }
 
-    public String getCardNumber(){
+    public int getCardNumber(){
 	return cardNumber;
     }
 }
