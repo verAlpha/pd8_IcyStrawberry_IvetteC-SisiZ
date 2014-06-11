@@ -3,7 +3,7 @@ public class Card {
     private String type;//for now all just add/subtract $
     //later change location, and pay/get $from other players?
     private int ammountAdded;
-    private String message;//add real card things like bank error collect 100?
+    private String name;//add real card things like bank error collect 100?
 
     public Card(String t, String s, int n){
 	name = s;
@@ -15,12 +15,12 @@ public class Card {
 	return name;
     }
 
-    public int getAmmountAdded(){
+    public int getAmountAdded(){
 	return ammountAdded;
     }
 
     public String getType(){
-	return type
+	return type;
     }
 
 }
