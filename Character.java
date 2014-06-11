@@ -90,6 +90,11 @@ public class Character{
 
     public void drawCard(){
 	Card c = board.getChance().getNext();
+	if(c.getType().equals("addMoney")){
+	    money += c.getAmountAdded();
+	    System.out.println(c.getName());
+	}
+	//else if type == ect.
     }
 
     public boolean endConditions(){
