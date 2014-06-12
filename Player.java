@@ -63,7 +63,7 @@ public class Player extends Character{
 	moveHelp();
 	boolean boo = true;
 	System.out.println(name+ ", what would you like to do anything else?" +
-			   "(buy house, trade, get stats, pass)"); 
+			   "(buy house, get stats, pass)"); 
 	while(boo){
 	    Scanner scan = new Scanner(System.in);
 	    String input = scan.nextLine();

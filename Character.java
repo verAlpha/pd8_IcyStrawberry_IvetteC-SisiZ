@@ -29,16 +29,17 @@ public class Character{
     
 
     public void getStats(){
-	System.out.println("name: " + name);
-	System.out.println("money: $" + money);
-	System.out.println("properties:");
+	System.out.println("NAME: " + name);
+	System.out.println("MONEY: $" + money);
+	System.out.println("PROPERTIES:");
 	for(BoardNode x: properties){
 	    if(x != null){
 		System.out.println(" - "+ x.getName() + " (" +
 				    "with " +  x.getHouseNum() + " houses)");
 	    }
 	}
-	System.out.println("current location: " + currentLocation.getName());
+	System.out.println("CURRENT LOCATION: " + currentLocation.getName());
+	System.out.println("\n");
     }
    
     /* 
@@ -70,7 +71,7 @@ public class Character{
 	    for (int i = 0; i < 3; i++){
 		if (properties[x*3 + i] == null){
 		    properties[x*3 + i] = location;
-		    if(i == 2;){
+		    if(i == 2){
 			full = true;
 		    }
 		    // System.out.println(stringify(properties));
@@ -102,30 +103,26 @@ public class Character{
 
     public void drawCard(){
 	Card c = board.getChance().getNext();
-	if(c.getType().equals("addMoney")){
+	if(c.getAmountAdded() != 0){
 	    money += c.getAmountAdded();
 	    System.out.println(c.getName());
 	}
-	/*else if (type.equals("changeLocation")){
+	else if (c.getNewLoc() != null){
 	    boolean go = false;
-	    while(currentLocation.getNext().getName() != c.getNewLoc()){
-		if (c.getNext().getName().equals("GO")){
+	    while(currentLocation.getNext().getName().equals( c.getNewLoc())){
+		if (currentLocation.getNext().getName().equals("GO")){
 		    go = true;
 		}
-		current Location = currentLocation.getNext()){
+		currentLocation = currentLocation.getNext();
 	    }
 	    currentLocation= currentLocation.getNext();
 	    if(go){
-	    System.out.println("you passed GO as you were going to"
-	    + c.getnewLoc() + ", collect $200";
+		System.out.println("you passed GO as you were going to" +
+				   c.getNewLoc() + ", collect $200");
 	    }
-	    //do action of location
-	    //!!!split move into more functions (roll dice and do action as seperate)
-	    }
-
+	    locAction();
 	}
 
-	 */
     }
 
     public boolean endConditions(){
@@ -139,15 +136,18 @@ public class Character{
 	//more conditions later?
 	//add something in for who has won?
 	//if one player loses does the game end? or others continue?
-	//ADD SOMETHING ABOUT NOT BEING ABLE TO PAY RENT
     }
 
-    public void  moveHelp(){
-        int x = roll();
-        for (int i = 0; i< x; i++){
+  
+    public void changeLocation(){
+	int x = roll();
+	for (int i = 0; i< x; i++){
             currentLocation = currentLocation.getNext();
         }
         System.out.println(name+" landed on "+ currentLocation.getName());
+    }
+  
+    public void locAction(){
 	if (currentLocation.getType().equals("Property")){
 	    if(currentLocation.getOwner() != null){
 		payRent( currentLocation );	
@@ -166,6 +166,11 @@ public class Character{
 	    money += 200;
 	}
 	//add free parking??
+    }
+
+    public void  moveHelp(){
+	changeLocation();
+        locAction();
     }
 
     

@@ -18,7 +18,7 @@ public class BoardNode{
 	next = b;
 	owner = null;
 	houses = 0;
-	fullset = false;
+	fullSet = false;
     }
 
     /*===================V Accessor Methods V====================*/    
