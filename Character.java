@@ -64,17 +64,28 @@ public class Character{
 			       + location.getName());
 	    return false;
 	}else{
-		//add something about having full sets, put yet another variable in boardNode?bookean fullSet?
+	    //add something about having full sets, put yet another variable in boardNode?bookean fullSet?
+	    boolean full = false;
 	    int x = location.getColor();
 	    for (int i = 0; i < 3; i++){
 		if (properties[x*3 + i] == null){
 		    properties[x*3 + i] = location;
+		    if(i == 2;){
+			full = true;
+		    }
 		    // System.out.println(stringify(properties));
 		    ////////
 		    break;
 		   
 		}
 	    }
+	    if(full){
+		for (int i = 0; i < 3; i++){
+		    properties[x*3 +i].makeFullSet();
+		    properties[x*3 +i].setRent(properties[x*3 +i].getRent() * 2);
+		}
+	    }
+	
 	    
 	    money -= location.getPrice();
 	    location.setOwner(this);
@@ -109,6 +120,7 @@ public class Character{
 	    + c.getnewLoc() + ", collect $200";
 	    }
 	    //do action of location
+	    //!!!split move into more functions (roll dice and do action as seperate)
 	    }
 
 	}

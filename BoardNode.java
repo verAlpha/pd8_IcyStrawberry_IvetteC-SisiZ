@@ -6,8 +6,10 @@ public class BoardNode{
     private Character owner;
     private String type;
     private int houses;
+    private boolean fullSet;
 
-    public BoardNode(String x, int c, int r, int p, String s, BoardNode b){
+    public BoardNode(String x, int c, int r, int p,
+		     String s, BoardNode b){
 	type = x;
 	color = c;
 	rent = r;
@@ -16,6 +18,7 @@ public class BoardNode{
 	next = b;
 	owner = null;
 	houses = 0;
+	fullset = false;
     }
 
     /*===================V Accessor Methods V====================*/    
@@ -43,6 +46,10 @@ public class BoardNode{
     public int getHouseNum(){
 	return houses;
     }
+    public boolean getFullSet(){
+	return fullSet;
+    }
+
     /*===================^ Mutator Methods ^====================*/      
     public void setPrice(int x){//not nesssecary?
 	price = x;
@@ -67,16 +74,29 @@ public class BoardNode{
     }
 
     public void addHouse(){
-	if(houses >= 5){
-	    System.out.println("you already have a hotel on" + name +
-			       ", you may not further upgrade it.");
+	if (!fullSet){
+	    System.out.println("you need the full set of properties of this"+
+			       "color to purchase a house");
 	}else{
-	     houses += 1;
-	    rent = (rent+color) * (color + 1) + 100;
-	    //maybe use a better system to determine rent
-	    System.out.println("you now have " + (houses) 
-			       + " house(s)  on "+ name);
-	    //fix grammar later maybe?
+	    if(houses >= 5){
+		System.out.println("you already have a hotel on" + name +
+				   ", you may not further upgrade it.");
+	    }else{
+		houses += 1;
+		rent = (rent+color) * (color + 1) + 100;
+		//maybe use a better system to determine rent
+		if (houses == 5){
+		    	System.out.println("you now have a hotel on" + name);
+		}else{
+		    System.out.println("you now have " + (houses) 
+				       + " house(s)  on "+ name);
+		}
+		//fix grammar later maybe?
+	    }
 	}
+    }
+
+    public void makeFullSet(){
+	fullSet = true;
     }
 }

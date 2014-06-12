@@ -16,7 +16,7 @@ public class Card {
     }
 
     public int getAmountAdded(){
-	return ammountAdded;
+	return ammountAdded;
     }
 
     public String getType(){
