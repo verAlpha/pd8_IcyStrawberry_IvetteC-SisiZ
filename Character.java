@@ -64,6 +64,7 @@ public class Character{
 			       + location.getName());
 	    return false;
 	}else{
+		//add something about having full sets, put yet another variable in boardNode?bookean fullSet?
 	    int x = location.getColor();
 	    for (int i = 0; i < 3; i++){
 		if (properties[x*3 + i] == null){
