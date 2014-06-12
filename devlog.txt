@@ -33,4 +33,8 @@ June 11
 	oops i haven't edited this in a while. But anyway We've incorporated simple cards(adding/subtacting money)
 	and working on ones that move you to a new spot on the board. We've also started computer player. and we
 	added locations on the board other than just properties.
+
+June 12
+	now the game know if you have a full set of colored properties to double the rent and know if you can buy house
+	cards can make you move to a new location(no paying other players or jail related stuff yet)
 	
