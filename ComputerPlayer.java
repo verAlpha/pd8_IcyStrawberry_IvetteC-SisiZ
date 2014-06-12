@@ -13,7 +13,15 @@ public class ComputerPlayer{
 	    super();
 	else
 	    return false; //passes it.
-    }
+	    
+    }	
+    
+	public boolean move(){
+		moveHelp();
+		return true;
+
+	}
+
 }
 
     
