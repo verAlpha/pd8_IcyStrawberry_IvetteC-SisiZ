@@ -18,7 +18,12 @@ public class ComputerPlayer{
     
 	public boolean move(){
 		moveHelp();
-		return true;
+		
+		//something about buyinh houses? 
+		//if rand # > .3 
+		//then sort through properties and see if full set, if so buy house
+		
+		return endConditions();
 
 	}
 
