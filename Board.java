@@ -11,13 +11,13 @@ public class Board{
 	
 	_start = new BoardNode("GO",-1, -1, -1, "GO", null);
 
-        String[] locs = {"Boardwalk", "Park Place", "Bond Street", "Card",
-			 "Pennsylvania Avenue","North Carolian Street", "Paciffic Avenue","Card",
-			 "Marvin Garens","Ventor Avenue", "Atlantic Avenue","Card",
+        String[] locs = {"Boardwalk", "Park Place", "Bond Street", "Chance",
+			 "Pennsylvania Avenue","North Carolian Street", "Paciffic Avenue","Chance",
+			 "Marvin Garens","Ventor Avenue", "Atlantic Avenue","Chance",
 			 "Illinois Avenue", "Indiana Avenue","Kentuky Avenue","Free Parking",
-			 "New York Avenue", "Tennesse Avenue", "St.James Place","Card",
-			 "Virginia Avenue", "States Avenue","St.Charles Place","Card",
-			 "Connectict Avenue", "Vermont Avenue","Oriental Avenue","Card",
+			 "New York Avenue", "Tennesse Avenue", "St.James Place","Chance",
+			 "Virginia Avenue", "States Avenue","St.Charles Place","Chance",
+			 "Connectict Avenue", "Vermont Avenue","Oriental Avenue","Chance",
 			 "Baltic Avenue", "Mediteranina Avenue","Oxford Street"};
 	BoardNode temp = _start;
 	
@@ -26,7 +26,7 @@ public class Board{
 	  back in, in place of a card or something.
 	 */
 	for (int i = 0; i < locs.length; i++){
-	    if (locs[i].equals("Card")){
+	    if (locs[i].equals("Chance")){
 		temp = new BoardNode("Card",-1, -1, -1, locs[i], temp);
 	    }else if(locs[i].equals("Jail")){
 		temp = new BoardNode("FreeParking",-1, -1, -1, locs[i], temp);
