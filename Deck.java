@@ -49,7 +49,6 @@ public class Deck{
 		     "GO" , null , null , null , null , null , null , null , null , null , null , null , null};
 
     public Deck(){
-	System.out.println(cards.length + " , " + locs.length + " , " + money.length);
 	deck = new Card[cards.length];
 	for (int i = 0; i < cards.length; i++){
 	    deck[i] = new Card( cards[i], money[i] , locs[i]);

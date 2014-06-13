@@ -75,7 +75,7 @@ public class BoardNode{
 
     public void addHouse(){
 	if (!fullSet){
-	    System.out.println("you need the full set of properties of this"+
+	    System.out.println("you need the full set of properties of this "+
 			       "color to purchase a house");
 	}else{
 	    if(houses >= 5){

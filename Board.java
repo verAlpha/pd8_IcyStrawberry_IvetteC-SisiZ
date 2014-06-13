@@ -3,6 +3,7 @@ public class Board{
     BoardNode _start;
     BoardNode[] characterLocations;
     Deck _chance;
+    int _freeParking;
     //Deck _communityChest;
       
     public Board(int characternumber){
@@ -13,18 +14,22 @@ public class Board{
         String[] locs = {"Boardwalk", "Park Place", "Bond Street", "Card",
 			 "Pennsylvania Avenue","North Carolian Street", "Paciffic Avenue","Card",
 			 "Marvin Garens","Ventor Avenue", "Atlantic Avenue","Card",
-			 "Illinois Avenue", "Indiana Avenue","Kentuky Avenue","Jail",
+			 "Illinois Avenue", "Indiana Avenue","Kentuky Avenue","Free Parking",
 			 "New York Avenue", "Tennesse Avenue", "St.James Place","Card",
 			 "Virginia Avenue", "States Avenue","St.Charles Place","Card",
 			 "Connectict Avenue", "Vermont Avenue","Oriental Avenue","Card",
 			 "Baltic Avenue", "Mediteranina Avenue","Oxford Street"};
 	BoardNode temp = _start;
 	
+	/*Ivette, I got rid of the jail because it seemed too complcated and it had no features yet,
+	  I replaced it with free parking but if you have ideas on implementing the jail you can add it
+	  back in, in place of a card or something.
+	 */
 	for (int i = 0; i < locs.length; i++){
 	    if (locs[i].equals("Card")){
 		temp = new BoardNode("Card",-1, -1, -1, locs[i], temp);
 	    }else if(locs[i].equals("Jail")){
-		temp = new BoardNode("Jail",-1, -1, -1, locs[i], temp);
+		temp = new BoardNode("FreeParking",-1, -1, -1, locs[i], temp);
 	    }else{
 		temp = new BoardNode("Property", 7-(i/locs.length), (locs.length-i)*2,
 				     i*20, locs[i],temp);
@@ -39,6 +44,7 @@ public class Board{
 	    characterLocations[i] = _start;
 	}
 	_chance = new Deck();
+	_freeParking = 0;
 	//_communityChest = new Deck();
 
     }
@@ -54,6 +60,15 @@ public class Board{
     public BoardNode start(){
 	return _start;
     }
-
+    public int getFreePaking(){
+	return _freeParking;
+    }
+    public void addToFreeParking(int x){
+	_freeParking += x;
+    }
+    public void emptyFreeParking(){
+	_freeParking = 0;
+    }
+    
 
 }

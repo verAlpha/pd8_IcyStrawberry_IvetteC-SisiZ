@@ -105,6 +105,7 @@ public class Character{
 	Card c = board.getChance().getNext();
 	if(c.getAmountAdded() != 0){
 	    money += c.getAmountAdded();
+	    board.addToFreeParking(c.getAmountAdded());
 	    System.out.println(c.getName());
 	}
 	else if (c.getNewLoc() != null){
@@ -157,15 +158,19 @@ public class Character{
 	}else if (currentLocation.getType().equals("Card")){
 	    drawCard();
 	    //cards initiall just add or subtract $??
-	}else if (currentLocation.getType().equals("Jail")){
-	    //do nothing
-	    System.out.println("just visting jail");
+	    /*}else if (currentLocation.getType().equals("Jail")){
+	   System.out.println("just visting jail");*/
 	}else if (currentLocation.getType().equals("GO")){
 	    //do nothing
 	    System.out.println("pass go collect 200");
 	    money += 200;
 	}
-	//add free parking??
+	else if(currentLocation.getType().equals("FreeParking")){
+	    int m = board.getFreePaking();
+	    money += m;
+	    System.out.println("You gained $" + m + "from free parking");
+	    board.emptyFreeParking();
+	}
     }
 
     public void  moveHelp(){

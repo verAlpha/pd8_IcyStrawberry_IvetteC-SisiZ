@@ -83,6 +83,7 @@ public class Player extends Character{
 	    System.out.println(name + ", would you like to do anything else?");
 		
 	}
+	System.out.println("\n");
 	return endConditions();
 
 	
