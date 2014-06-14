@@ -14,7 +14,6 @@ public class ComputerPlayer{
 	    
     }	
     
-<<<<<<< HEAD
     public boolean move(){
 	moveHelp();
 	return true;
