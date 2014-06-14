@@ -6,7 +6,7 @@ public class Character{
 
     String name;
     int money;
-    int number;
+    int initialDiceRoll;
     BoardNode[] properties;
     BoardNode currentLocation;
     Board board;
@@ -178,7 +178,9 @@ public class Character{
 	changeLocation();
         locAction();
     }
-
+    public boolean move(){//overriden by subclasses
+	return false;
+    }
     
     /*========== Accesor Methods =============*/
     public String getName(){
@@ -187,8 +189,8 @@ public class Character{
     public int getMoney(){
 	return money;
     }
-    public int getNumber(){
-	return number;
+    public int getInitialDiceRoll(){
+	return initialDiceRoll;
     }
     public BoardNode[] getProperties(){
 	return properties;
@@ -209,6 +211,9 @@ public class Character{
     }
     public void setName(String s){
 	name = s;
+    }
+    public void setInitialDiceRoll(int x){
+	initialDiceRoll = x;
     }
 
 }

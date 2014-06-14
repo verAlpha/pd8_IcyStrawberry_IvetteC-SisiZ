@@ -3,9 +3,7 @@ public class Deck{
     private Card[] deck;
     private int current;
 
-    // String[] cards = {"Jail Card", "Penalty Card", "Reward Card", "Generous Card", "Receiving Card"};
-
-    String[] cards = {
+    private String[] cards = {
 	"Advance to Go (collect $200)",
 	"Advance to Illinois Ave.", 
 	//Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total ten times the amount thrown. 
@@ -42,10 +40,10 @@ public class Deck{
 	"Holiday Fund matures - Receive $100 "
     };
 
-    int[] money = {0 , 0 , 0 , 50 , 0 , 0 , 150 , 100 ,
+    private int[] money = {0 , 0 , 0 , 50 , 0 , 0 , 150 , 100 ,
 		   0 , 75 , -50 , 20 , 100 , -100 , -50 , 25 , 10 , 100 , 50 , 100 }; 
 
-    String[] locs = {"GO" , "Illinois Ave" , "St.Charles Place" , null , null , "Boardwalk" , null , null ,
+    private String[] locs = {"GO" , "Illinois Ave" , "St.Charles Place" , null , null , "Boardwalk" , null , null ,
 		     "GO" , null , null , null , null , null , null , null , null , null , null , null , null};
 
     public Deck(){
