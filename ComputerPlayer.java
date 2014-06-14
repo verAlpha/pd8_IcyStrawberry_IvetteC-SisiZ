@@ -42,7 +42,6 @@ public class ComputerPlayer{
 		    properties[x].addHouse();
 		    money -= properties[x].getColor()/4 * 50 ;
 		}
-=======
 	public boolean move(){
 		moveHelp();
 		
@@ -51,7 +50,6 @@ public class ComputerPlayer{
 		//then sort through properties and see if full set, if so buy house
 		
 		return endConditions();
->>>>>>> f0ba0e369c50b3e6a00f230501609017f4af5dd3
 
 
 
