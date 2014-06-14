@@ -16,6 +16,16 @@ public class ComputerPlayer extends Character{
 	}
     }	
     
+<<<<<<< HEAD
+=======
+    public boolean move(){
+	moveHelp();
+	return true;
+	
+	 
+
+    }
+>>>>>>> 71af4e7144143cfaa0e6f411d45f5c6d2eddf700
 
     //maybe add ability to buy houses
    
@@ -36,6 +46,20 @@ public class ComputerPlayer extends Character{
 		    System.out.println(name + "has bought a house for"+
 				       prop.getName());
 		}
+<<<<<<< HEAD
+=======
+	public boolean move(){
+		moveHelp();
+		
+		//something about buyinh houses? 
+		//if rand # > .3 
+		//then sort through properties and see if full set, if so buy house
+		
+		return endConditions();
+
+
+
+>>>>>>> 71af4e7144143cfaa0e6f411d45f5c6d2eddf700
 	    }
 	}
     }

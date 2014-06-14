@@ -38,3 +38,7 @@ June 12
 	now the game know if you have a full set of colored properties to double the rent and know if you can buy house
 	cards can make you move to a new location(no paying other players or jail related stuff yet)
 	
+June 13
+	continued to work on comuterPlayer. Also, working on driver to incorporate computer players and have player
+	choose number of players(computer and human). added in free parking instead of jail because jail seems really
+	difficult to keep track of and with a smaller board too common
