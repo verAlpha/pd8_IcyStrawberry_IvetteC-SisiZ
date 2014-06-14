@@ -55,6 +55,7 @@ public class Character{
 	return s;
 	}*/
 
+
     public boolean buyProperty( BoardNode location ){
 	if(location.getOwner() != null){
 	    System.out.println(location.getOwner().getName() + 

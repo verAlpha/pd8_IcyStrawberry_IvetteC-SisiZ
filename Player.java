@@ -28,10 +28,10 @@ public class Player extends Character{
     }
 
     public void buyHouse(){
-     	System.out.println("for which property would you like to buy a house?");
+     	System.out.println("for which property would you like to buy a house/hotel?");
      	Scanner scan = new Scanner(System.in);
      	String prop = scan.nextLine();
-     	int x = -1;
+	int x = -1;
      	for (int i = 0; i < properties.length; i++){
      	    if (properties[i] != null){
      		if( properties[i].getName().equals( prop )){
@@ -43,13 +43,12 @@ public class Player extends Character{
 	if (x == -1){
 	    System.out.println("you do not own " + prop +
 			      ", or you typed it out wrong,");
-	}else if( properties[x%3] != null &&
-		  properties[x%3 + 1] != null &&
-		  properties[x%3 + 2] != null ){
-	    System.out.println("you don't own all the "+"__color"+" properties");
-			       //fill in color?
+	}else if( !properties[x].getFullSet() ){
+	    System.out.println("you don't own all the properties of this color");
+	    //fill in color?
+	    //too hard? colors are numbers
 	}else if ((properties[x].getColor()/4) * 50 > money){
-	    System.out.println("you do not have enough money to buy a house for" +
+	    System.out.println("you do not have enough money to buy a house/hotel for" +
 			       properties[x].getName());
 
 	} else{
