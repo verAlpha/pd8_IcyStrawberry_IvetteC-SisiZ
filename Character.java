@@ -39,7 +39,7 @@ public class Character{
 	    }
 	}
 	System.out.println("CURRENT LOCATION: " + currentLocation.getName());
-	System.out.println("\n");
+	System.out.println("");
     }
    
     /* 
@@ -62,7 +62,7 @@ public class Character{
 			       " already owns " + location.getName() );
 	    return false;
 	}else if(location.getPrice() > money){
-	    System.out.println("you do not have enough money to buy "
+	    System.out.println(name +", you do not have enough money to buy "
 			       + location.getName());
 	    return false;
 	}else{

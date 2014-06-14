@@ -2,6 +2,7 @@ public class ComputerPlayer extends Character{
 
     private String[] NAMES = {"Bob", "Sam", "John", "Mary"};
 
+
     public ComputerPlayer( String s, Board b){
 	super(s, b);	
 	String n = NAMES[(int)(Math.random() * NAMES.length)];
@@ -12,6 +13,8 @@ public class ComputerPlayer extends Character{
 	if (Math.random() > .2){
 	    return super.buyProperty(location);
 	}else{
+	    System.out.println(name + " has chosen not to buy "+
+			       location.getName());
 	    return false; //passes it.
 	}
     }	
@@ -24,9 +27,11 @@ public class ComputerPlayer extends Character{
 	if (Math.random() > .2){//randomly chooses to buy house
 	    BoardNode prop = null;
 	    for(int i = 0; i < properties.length; i++){
-		if(properties[i].getFullSet()){
-		    prop = properties[i];
-		    break;//just chooses first property that is full set
+		if (properties[i] != null){
+		    if(properties[i].getFullSet()){
+			prop = properties[i];
+			break;//just chooses first property that is full set
+		    }
 		}
 	    }	    
 	    if(prop != null){//if  any full sets
@@ -42,6 +47,8 @@ public class ComputerPlayer extends Character{
 
     public boolean move(){
 	moveHelp();
+	//don't know why this needed
+	//i think buy property which is called in moveHelp should work
 	buyHouse();
 		
 	return endConditions();

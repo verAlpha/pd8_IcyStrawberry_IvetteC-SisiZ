@@ -43,7 +43,7 @@ public class Driver{
     private static Player makePlayer( int x , Board b){
 	Player p = new Player("" , b);
 	Scanner scan = new Scanner(System.in);	
-	System.out.println("What is the name of player " + x + "?");
+	System.out.println("What is the name of player " + (x+1) + "?");
 	String name = scan.nextLine();
 	p.setName(name);
 	return p;
@@ -52,7 +52,8 @@ public class Driver{
 	ComputerPlayer p = new ComputerPlayer("", b);
 	return p;
     }
- 
+    //what if same name chosen twice????
+
 
     public static void main( String[] args ){
 
@@ -121,7 +122,7 @@ public class Driver{
 		temp.add(_players[i]);
 	    }else{
 		int j = 0;
-		while(_players[i].getInitialDiceRoll() > temp.get(j).getInitialDiceRoll()){
+		while(j < temp.size() && _players[i].getInitialDiceRoll() < temp.get(j).getInitialDiceRoll() ){
 		    j++;
 		}
 		temp.add(j, _players[i]);
