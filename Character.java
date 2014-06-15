@@ -30,7 +30,7 @@ public class Character{
     
 
     public void getStats(){
-	System.out.println("NAME: " + name);
+	System.out.println("\n ------Stats------ \nNAME: " + name);
 	System.out.println("MONEY: $" + money);
 	System.out.println("PROPERTIES:");
 	for(BoardNode x: properties){
@@ -40,7 +40,7 @@ public class Character{
 	    }
 	}
 	System.out.println("CURRENT LOCATION: " + currentLocation.getName());
-	System.out.println("");
+	System.out.println("------------------- \n");
     }
    
     /* 
@@ -108,7 +108,7 @@ public class Character{
 	if(c.getAmountAdded() != 0){
 	    money += c.getAmountAdded();
 	    board.addToFreeParking(c.getAmountAdded());
-	    System.out.println(c.getName());
+	    System.out.println(name + ": " + c.getName());
 	}
 	else if (c.getNewLoc() != null){
 	    boolean go = false;
@@ -120,7 +120,7 @@ public class Character{
 	    }
 	    currentLocation= currentLocation.getNext();
 	    if(go){
-		System.out.println("you passed GO as you were going to" +
+		System.out.println(name +  ": You passed GO as you were going to to" +
 				   c.getNewLoc() + ", collect $200");
 	    }
 	    locAction();
@@ -164,13 +164,13 @@ public class Character{
 	   System.out.println("just visting jail");*/
 	}else if (currentLocation.getType().equals("GO")){
 	    //do nothing
-	    System.out.println("pass go collect 200");
+	    System.out.println( name + ": pass go collect 200");
 	    money += 200;
 	}
 	else if(currentLocation.getType().equals("FreeParking")){
 	    int m = board.getFreePaking();
 	    money += m;
-	    System.out.println("You gained $" + m + "from free parking");
+	    System.out.println(name + ": gained $" + m + "from free parking");
 	    board.emptyFreeParking();
 	}
     }

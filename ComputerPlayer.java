@@ -38,7 +38,7 @@ public class ComputerPlayer extends Character{
 		if ((prop.getColor()/4) * 50 < money/2){//if can afford
 		    prop.addHouse();
 		    money -= prop.getColor()/4 * 50;
-		    System.out.println(name + "has bought a house for"+
+		    System.out.println(name + "has bought a house for "+
 				       prop.getName());
 		}
 	    }

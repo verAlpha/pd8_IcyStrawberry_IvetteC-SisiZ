@@ -75,21 +75,21 @@ public class BoardNode{
 
     public void addHouse(){
 	if (!fullSet){
-	    System.out.println("you need the full set of properties of this "+
+	    System.out.println(owner.getName() + " need the full set of properties of this "+
 			       "color to purchase a house");
 	}else{
 	    if(houses >= 5){
-		System.out.println("you already have a hotel on" + name +
+		System.out.println(owner.getName() + " already have a hotel on" + name +
 				   ", you may not further upgrade it.");
 	    }else{
 		houses += 1;
 		rent = (rent+color) * (color + 1) + 100;
 		//maybe use a better system to determine rent
 		if (houses == 5){
-		    	System.out.println("you now have a hotel on" + name);
+		    	System.out.println(owner.getName() + " now have a hotel on " + name);
 		}else{
-		    System.out.println("you now have " + (houses) 
-				       + " house(s)  on "+ name);
+		    System.out.println(owner.getName() + "you now have " + (houses) 
+				       + " house(s) on "+ name);
 		}
 		//fix grammar later maybe?
 	    }

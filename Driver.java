@@ -8,7 +8,7 @@ public class Driver{
 
     private static int askPlayerNum(){
 	Scanner scan = new Scanner(System.in);
-	System.out.println("How many human players will be playing?");
+	System.out.println("How many human players will be playing? ");
 	String s = scan.nextLine();
 	int n = (int)(Integer.parseInt(s));
 	if (n < 1){
@@ -136,7 +136,7 @@ public class Driver{
 	    _players[i] = temp.get(i);
 	}
 
-	System.out.println("turn order is as follows:");
+	System.out.println("\nTurn order is as follows:");
 	for (int i = 0; i < totalNumPlayers; i++){
 	    System.out.println( (i+1) + ".)" + _players[i].getName());
 	}
