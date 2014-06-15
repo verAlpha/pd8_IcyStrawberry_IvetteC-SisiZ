@@ -42,3 +42,9 @@ June 13
 	continued to work on comuterPlayer. Also, working on driver to incorporate computer players and have player
 	choose number of players(computer and human). added in free parking instead of jail because jail seems really
 	difficult to keep track of and with a smaller board too common
+	
+June 14
+	We had a slight problem with computer player but it was fixed within no time. We started wroking on the visual aspect of the game 
+	adding necessary \n to lines to make it less confusing. Compared to the normal game, are version seems to be faster. 
+	We're not sure if we should add delay signs or not. We realized, after playing the beta, that the game starts of
+	on the higher side of monopoly rather than the lower side. It's cool like that. So we might leave it like that.
