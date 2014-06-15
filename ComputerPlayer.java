@@ -50,10 +50,9 @@ public class ComputerPlayer extends Character{
 	//don't know why this needed
 	//i think buy property which is called in moveHelp should work
 	buyHouse();
-		
+
 	return endConditions();
     }
 
 
 }
-    

@@ -8,7 +8,7 @@ public class Board{
       
     public Board(int characternumber){
 	characterLocations = new BoardNode[characternumber];
-	
+
 	_start = new BoardNode("GO",-1, -1, -1, "GO", null);
 
         String[] locs = {"Boardwalk", "Park Place", "Bond Street", "Chance",
@@ -20,7 +20,7 @@ public class Board{
 			 "Connectict Avenue", "Vermont Avenue","Oriental Avenue","Chance",
 			 "Baltic Avenue", "Mediteranina Avenue","Oxford Street"};
 	BoardNode temp = _start;
-	
+
 	/*Ivette, I got rid of the jail because it seemed too complcated and it had no features yet,
 	  I replaced it with free parking but if you have ideas on implementing the jail you can add it
 	  back in, in place of a card or something.

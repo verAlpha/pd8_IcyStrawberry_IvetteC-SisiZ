@@ -106,7 +106,7 @@ public class Driver{
 	for(int i = numPlayers; i< totalNumPlayers; i++){
 	    _players[i] = makeCompPlayer(_board);
 	}
-	
+
 	//SETTING UP TURN ORDER
 	//couldn't think of simple more efficent way to do this. ideas?	
 	// if = dice roll just give first players priority? simpler.
@@ -118,6 +118,7 @@ public class Driver{
 
 	ArrayList<Character> temp = new ArrayList<Character>();
 	for (int i = 0; i < totalNumPlayers; i++){
+	    // awesome usage of sort!
 	    if(temp.size() == 0){
 		temp.add(_players[i]);
 	    }else{
@@ -127,8 +128,9 @@ public class Driver{
 		}
 		temp.add(j, _players[i]);
 	    }
+	    _players[i].setNumber(i); // set the number of the character
 	}
-	
+
 	//putting players back into an array rather than array list because i find them easier to work with
 	for (int i = 0; i < totalNumPlayers; i++){
 	    _players[i] = temp.get(i);

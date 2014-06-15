@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Character{
 
     String name;
-    int money;
+    int money, number;
     int initialDiceRoll;
     BoardNode[] properties;
     BoardNode currentLocation;
@@ -13,8 +13,9 @@ public class Character{
 
     public Character(String n, Board b){
             name = n;
-            money = 1500;
-            properties = new BoardNode[24];
+	    money = 1500;
+	    number = 0;
+	    properties = new BoardNode[24];
             board = b;
             currentLocation = b.start();
     }
@@ -78,7 +79,7 @@ public class Character{
 		    // System.out.println(stringify(properties));
 		    ////////
 		    break;
-		   
+
 		}
 	    }
 	    if(full){
@@ -87,8 +88,8 @@ public class Character{
 		    properties[x*3 +i].setRent(properties[x*3 +i].getRent() * 2);
 		}
 	    }
-	
-	    
+
+
 	    money -= location.getPrice();
 	    location.setOwner(this);
 	    return true;
@@ -189,6 +190,9 @@ public class Character{
     public int getMoney(){
 	return money;
     }
+    public int getNumber(){
+	return number;
+    }
     public int getInitialDiceRoll(){
 	return initialDiceRoll;
     }
@@ -208,6 +212,9 @@ public class Character{
     }
     public void setLocation(BoardNode nextLocation){
 	currentLocation = nextLocation;
+    }
+    public void setNumber(int n){
+	number = n;
     }
     public void setName(String s){
 	name = s;

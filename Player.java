@@ -28,7 +28,7 @@ public class Player extends Character{
     }
 
     public void buyHouse(){
-     	System.out.println("for which property would you like to buy a house/hotel?");
+     	System.out.println("for which property would you like to buy a house/hoel?");
      	Scanner scan = new Scanner(System.in);
      	String prop = scan.nextLine();
 	int x = -1;
@@ -64,7 +64,7 @@ public class Player extends Character{
 	System.out.println(name+ ", what would you like to do anything else?" +
 			   "(buy house, get stats, pass)"); 
 	while(boo){
-	    Scanner scan = new Scanner(System.in);
+	    Scanner scan = new Scanner(Systemin);
 	    String input = scan.nextLine();
 	    if(input.equals("pass")){
 		System.out.println(name+ "'s turn is over");
@@ -75,17 +75,17 @@ public class Player extends Character{
 	    }else if(input.equals("get stats")){
 		getStats();
 	    }else if(input.equals("trade")){
-	    
+
 	    }else{
 		System.out.println("invalid input, try again");
 	    }
 	    System.out.println(name + ", would you like to do anything else?");
-		
+
 	}
 	System.out.println("\n");
 	return endConditions();
 
-	
+
     }
 
   
