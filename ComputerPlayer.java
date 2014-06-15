@@ -10,9 +10,20 @@ public class ComputerPlayer extends Character{
     }
 
     public boolean buyProperty(BoardNode location){
+	// super.getStats();
+	// System.out.println("Computer buyProperty");
 	if (Math.random() > .2){
-	    return super.buyProperty(location);
+	    //System.out.println("Computer buyProperty If statement");
+	    boolean b = super.buyProperty(location);
+	    //System.out.println("Boolean B: " + b);
+	    //super.getStats();
+	    if (b)
+		System.out.println(name + " has bought " + location.getName());
+	    else
+		System.out.println(name + " could not buy " + location.getName());
+	    return b;
 	}else{
+	    System.out.println("Computer buyProperty Else statement");
 	    System.out.println(name + " has chosen not to buy "+
 			       location.getName());
 	    return false; //passes it.

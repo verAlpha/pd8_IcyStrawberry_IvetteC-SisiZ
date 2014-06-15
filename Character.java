@@ -152,11 +152,10 @@ public class Character{
   
     public void locAction(){
 	if (currentLocation.getType().equals("Property")){
-	    if(currentLocation.getOwner() != null){
+	    if(currentLocation.getOwner() != null)
 		payRent( currentLocation );	
-	    }else{
+	    else
 		buyProperty(currentLocation);
-	    }
 	}else if (currentLocation.getType().equals("Card")){
 	    drawCard();
 	    //cards initiall just add or subtract $??
