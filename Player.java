@@ -34,7 +34,7 @@ public class Player extends Character{
     }
 
     public void buyHouse(){
-     	System.out.println("for which property would you like to buy a house/hotel? (house/hotel/cancel)");
+     	System.out.println("for which property would you like to buy a house/hotel? (Note: To know what you own, cancel and get stats.)");
      	Scanner scan = new Scanner(System.in);
      	String prop = scan.nextLine();
 	int x = -1;

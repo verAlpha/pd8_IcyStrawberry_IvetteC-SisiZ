@@ -1,13 +1,31 @@
 public class ComputerPlayer extends Character{
 
-    private String[] NAMES = {"Bob", "Sam", "John", "Mary"};
+    private char[] consonants = {'b', 'c', 'd', 'f', 
+				 'g', 'h', 'j', 'k',
+				 'l', 'm', 'n', 'q', 
+				 'r', 's', 't', 'v', 
+				 'w', 'x', 'y', 'z'};
+
+    private char[] vowels = {'a', 'e', 'i', 'o', 'u', 'y'};
 
 
     public ComputerPlayer( String s, Board b){
 	super(s, b);	
-	String n = NAMES[(int)(Math.random() * NAMES.length)];
-	name = n;
+	name = toName();
     }
+
+    public String toName(){
+	String name = "";
+	for (int i = 0; i < Math.random()*8; i++){
+	    double random = Math.random();
+	    if (random > 0.65)
+		name += consonants[(int)(Math.random() * consonants.length)];
+	    else
+		name += vowels[(int)(Math.random() * vowels.length)];
+	}
+	return name;
+    }
+	    
 
     public boolean buyProperty(BoardNode location){
 	// super.getStats();

@@ -22,7 +22,7 @@ public class Character{
 
     public int roll(){
         int x = (int)(Math.random() *6) +  (int)(Math.random() *6) + 2; 
-        System.out.println(name+" rolled a: " + x);
+        System.out.println("\n"+name+" rolled a: " + x);
         return x;
         //maybe add in something for doubles later?
         //possibly have character press something to roll?

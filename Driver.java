@@ -147,6 +147,8 @@ public class Driver{
 	    for(int i = 0; i < totalNumPlayers ; i++){
 		end = _players[i].move();
 		if(end){
+		    for (int j = 0; j < _players.length; j++)
+			_players[j].getStats();
 		    break;
 		}
 	    }
