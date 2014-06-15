@@ -24,7 +24,7 @@ public class ComputerPlayer extends Character{
    
 
     public void buyHouse(){
-	if (Math.random() > .2){//randomly chooses to buy house
+	if (Math.random() > .5){//randomly chooses to buy house
 	    BoardNode prop = null;
 	    for(int i = 0; i < properties.length; i++){
 		if (properties[i] != null){
