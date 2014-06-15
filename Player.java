@@ -15,15 +15,21 @@ public class Player extends Character{
 			   location.getName() + "($" +
 			   location.getPrice() +")"+ "? (yes/no)");
 	String input = scan.nextLine();
+	while (!(input.equals("yes") || input.equals("no"))){
+	    System.out.println("invalid input");
+	    input = scan.nextLine();
+	}
 	if(input.equals("yes")){
 	    super.buyProperty(location);
 	    return true;
 	}else if(input.equals("no")){
 	    return false;
-	}else {
+	}
+	/*else {
 	    System.out.println("invalid input");
 	    super.buyProperty(location);
-	}
+	    }*/
+	// ^does not work instead it gets exited ^
 	return false;
     }
 
