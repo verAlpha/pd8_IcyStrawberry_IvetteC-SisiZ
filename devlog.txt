@@ -48,8 +48,13 @@ June 13
 	
 June 14
 	We had a slight problem with computer player but it was fixed within no time. 
-	We started wroking on the visual aspect of the game adding necessary \n to lines 
+	We started working on the “visual” aspect of the game adding necessary \n to lines 
 	to make it less confusing. Compared to the normal game, are version seems to be faster. 
 	We're not sure if we should add delay signs or not. We realized, after playing the beta, 
 	that the game starts of on the higher side of monopoly rather than the lower side. 
 	It's cool like that. So we might leave it like that.
+June 15
+	Last Day!!!
+	(We changed it back to start on the lower side)
+	earlier we forgot to add passing go so that was added
+	more error checking, and print lines added to say what’s going on
