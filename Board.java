@@ -1,13 +1,13 @@
 public class Board{
       
     BoardNode _start;
-    BoardNode[] characterLocations;
+    //BoardNode[] characterLocations;//relized this had no functionality and didn't want to implent in character
     Deck _chance;
     int _freeParking;
     //Deck _communityChest;
       
     public Board(int characternumber){
-	characterLocations = new BoardNode[characternumber];
+	//characterLocations = new BoardNode[characternumber];
 
 	_start = new BoardNode("GO",-1, -1, -1, "GO", null);
 
@@ -28,21 +28,20 @@ public class Board{
 	for (int i = 0; i < locs.length; i++){
 	    if (locs[i].equals("Chance")){
 		temp = new BoardNode("Card",-1, -1, -1, locs[i], temp);
-	    }else if(locs[i].equals("Jail")){
+	    }else if(locs[i].equals("Free Parking")){
 		temp = new BoardNode("FreeParking",-1, -1, -1, locs[i], temp);
 	    }else{
-		temp = new BoardNode("Property", 7-(i/locs.length), (locs.length-i)*2,
-				     i*20, locs[i],temp);
+		temp = new BoardNode("Property", 7-(i/4), (locs.length-i)*3,
+				     ( 20*(locs.length - i)) , locs[i] ,temp);
 	    }
 	}
-	//add in other types later now just standard properties
-        //
+       
 
 	_start.setNext(temp);
 
-	for(int i = 0; i < characterLocations.length; i++){
-	    characterLocations[i] = _start;
-	}
+	//for(int i = 0; i < characterLocations.length; i++){
+	//    characterLocations[i] = _start;
+	//}
 	_chance = new Deck();
 	_freeParking = 0;
 	//_communityChest = new Deck();
@@ -53,9 +52,9 @@ public class Board{
 	return _chance;
     }
   
-    public void setCharacterLocaton(BoardNode newLoc, Character c){
-	characterLocations[c.getNumber()] = newLoc;            
-    } 
+    // public void setCharacterLocaton(BoardNode newLoc, Character c){
+    //	characterLocations[c.getNumber()] = newLoc;            
+    //} 
 
     public BoardNode start(){
 	return _start;

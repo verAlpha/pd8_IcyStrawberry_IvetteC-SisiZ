@@ -49,7 +49,16 @@ public class BoardNode{
     public boolean getFullSet(){
 	return fullSet;
     }
+    public String getRealColor(){
+	String[] colors = {"purple","light blue","pink","orange",
+			   "red","yellow","green","dark blue"};
+	if (color != -1){
+	    return colors[color];
+	}else{
+	    return "no color";
+	}
 
+    }
     /*===================^ Mutator Methods ^====================*/      
     public void setPrice(int x){//not nesssecary?
 	price = x;

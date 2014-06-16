@@ -112,7 +112,7 @@ public class Driver{
 	// if = dice roll just give first players priority? simpler.
 	for( int i = 0; i < totalNumPlayers; i++){
 	    System.out.println( _players[i].getName() +
-			       " now rolling to determine the turn order.");
+			       " \n now rolling to determine the turn order.");
 	    _players[i].setInitialDiceRoll( _players[i].roll() );
 	}
 

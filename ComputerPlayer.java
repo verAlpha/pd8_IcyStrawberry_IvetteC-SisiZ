@@ -41,7 +41,7 @@ public class ComputerPlayer extends Character{
 		System.out.println(name + " could not buy " + location.getName());
 	    return b;
 	}else{
-	    System.out.println("Computer buyProperty Else statement");
+	    //System.out.println("Computer buyProperty Else statement");
 	    System.out.println(name + " has chosen not to buy "+
 			       location.getName());
 	    return false; //passes it.

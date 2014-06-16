@@ -36,7 +36,8 @@ public class Character{
 	for(BoardNode x: properties){
 	    if(x != null){
 		System.out.println(" - "+ x.getName() + " (" +
-				    "with " +  x.getHouseNum() + " houses)");
+				    "with " +  x.getHouseNum() + " houses)" +
+				   "( color: " + x.getRealColor());
 	    }
 	}
 	System.out.println("CURRENT LOCATION: " + currentLocation.getName());
@@ -66,8 +67,7 @@ public class Character{
 	    System.out.println(name +", you do not have enough money to buy "
 			       + location.getName());
 	    return false;
-	}else{
-	    //add something about having full sets, put yet another variable in boardNode?bookean fullSet?
+	}else{	    
 	    boolean full = false;
 	    int x = location.getColor();
 	    for (int i = 0; i < 3; i++){
@@ -100,15 +100,16 @@ public class Character{
 	location.getOwner().setMoney(location.getOwner().getMoney()+
 				     location.getRent());
 	money -= location.getRent();
-	System.out.println("rent paid");
+	System.out.println("rent of $" + location.getRent()+ " paid to " + location.getOwner().getName());
     }
 
-    public void drawCard(){
+    public void drawCard(){	
 	Card c = board.getChance().getNext();
+	System.out.println("the card reads: "+ c.getName());
 	if(c.getAmountAdded() != 0){
 	    money += c.getAmountAdded();
 	    board.addToFreeParking(c.getAmountAdded());
-	    System.out.println(name + ": " + c.getName());
+	    //System.out.println(name + ": " + c.getName());
 	}
 	else if (c.getNewLoc() != null){
 	    boolean go = false;
@@ -144,10 +145,20 @@ public class Character{
   
     public void changeLocation(){
 	int x = roll();
+	boolean go = false;
 	for (int i = 0; i< x; i++){
+	    if(i != 0 && currentLocation.getName().equals( "GO" )){
+		go = true;
+	    }
             currentLocation = currentLocation.getNext();
         }
-        System.out.println(name+" landed on "+ currentLocation.getName());
+        System.out.println(name+" landed on "+ currentLocation.getName() +
+			   " (color: " + currentLocation.getRealColor() + ")");
+	if(go){
+	    System.out.println(name + " passed GO on his/her way to " + currentLocation.getName() +
+			       "collect $200 for passing GO");
+	    money += 200;
+	}
     }
   
     public void locAction(){
@@ -163,13 +174,13 @@ public class Character{
 	   System.out.println("just visting jail");*/
 	}else if (currentLocation.getType().equals("GO")){
 	    //do nothing
-	    System.out.println( name + ": pass go collect 200");
+	    System.out.println( name + ": landed GO collect 200");
 	    money += 200;
 	}
 	else if(currentLocation.getType().equals("FreeParking")){
 	    int m = board.getFreePaking();
 	    money += m;
-	    System.out.println(name + ": gained $" + m + "from free parking");
+	    System.out.println(name + ": gained $" + m + " from free parking");
 	    board.emptyFreeParking();
 	}
     }
